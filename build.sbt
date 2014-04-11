@@ -1,4 +1,4 @@
-name := "WebWorkTimeSheet"
+name := "worktimesheet"
 
 version := "1.0-SNAPSHOT"
 
