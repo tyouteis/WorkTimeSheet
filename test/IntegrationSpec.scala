@@ -14,6 +14,7 @@ import org.specs2.specification.{ BeforeExample, AfterExample, Scope }
 class IntegrationSpec extends Specification with BeforeExample {
   def fakeApp = FakeApplication(
     additionalConfiguration = inMemoryDatabase())
+
   def before = {
     running(fakeApp) {
        1 must beEqualTo(1)
