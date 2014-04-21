@@ -13,7 +13,8 @@ object Application extends Controller {
   )
 
   def index = Action {
-    Redirect(routes.Application.tasks)
+    //Redirect(routes.Application.tasks)
+    Ok(views.html.index(Task.all(), taskForm))
   }
 
   def tasks = Action {

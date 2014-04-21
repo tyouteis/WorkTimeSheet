@@ -14,6 +14,7 @@ import org.specs2.specification.{ BeforeExample, AfterExample, Scope }
 class IntegrationSpec extends Specification with BeforeExample {
   def fakeApp = FakeApplication(
     additionalConfiguration = inMemoryDatabase())
+
   def before = {
     running(fakeApp) {
        1 must beEqualTo(1)
@@ -24,7 +25,9 @@ class IntegrationSpec extends Specification with BeforeExample {
 
     "work from within a browser" in new WithBrowser {
       running(fakeApp) {
-        browser.goTo("http://localhost:" + port)
+        //browser.goTo("http://localhost:" + port + "/assets/javascripts/jquery-1.9.0.min.js")
+        browser.goTo("http://localhost:" + port + "/tasks")
+        //println(browser.pageSource)
         browser.pageSource must contain("task(s)")
      }
     }

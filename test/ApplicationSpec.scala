@@ -33,7 +33,7 @@ class ApplicationSpec extends Specification with BeforeExample {
     "render the index page" in {
       running(fakeApp) {
         val home = route(FakeRequest(GET, "/tasks")).get
-
+        //println(contentAsString(home))
         status(home) must equalTo(OK)
         contentType(home) must beSome.which(_ == "text/html")
         contentAsString(home) must contain ("task(s)")

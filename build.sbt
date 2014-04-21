@@ -10,3 +10,8 @@ libraryDependencies ++= Seq(
 )
 
 play.Project.playScalaSettings
+
+ScoverageSbtPlugin.instrumentSettings
+
+ScoverageSbtPlugin.ScoverageKeys.excludedPackages in ScoverageSbtPlugin.scoverage :=
+  "<empty>;Reverse.*;.*AuthService.*;models.data..*"
